@@ -1,0 +1,356 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and borders are included in width and height */
+    margin: 0;
+    padding: 0;
+}
+
+/* General Layout Styles */
+body {
+    font-family: Arial, sans-serif; /* Apply a consistent font */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    gap: 1.5rem;
+    justify-content: space-between; /* Add spacing between sections */
+    max-width: 100%; /* Ensure container doesn't exceed viewport width */
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #1b5e20, #4caf50); /* Gradient background */
+    color: white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out header elements */
+    width: 100%; /* Ensure header is full width */
+    border-radius: 8px; /* Rounded corners */
+}
+
+header img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    border-radius: 50%; /* Circular image */
+    border: 2px solid white; /* White border around image */
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+    letter-spacing: 1px; /* Slight spacing for elegance */
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #26a69a;
+    color: #f9f9f9;
+}
+
+
+/* Sidebar Styles (Nav) */
+.nav {
+    width: 25%; /* Adjusted to 25% for symmetry */
+    background: linear-gradient(180deg, #1b5e20, #388e3c); /* Enhanced gradient */
+    color: white;
+    padding: 2rem;
+    border-radius: 16px; /* More pronounced corners */
+    box-shadow: 6px 0 15px rgba(0, 0, 0, 0.3);
+    max-height: 85vh; /* Adjusted height */
+    overflow-y: auto; /* Smooth scrolling for overflow */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    border: 2px solid #2e7d32; /* Subtle border for structure */
+    transition: all 0.4s ease-in-out; /* Smoother animations */
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Even spacing between items */
+}
+
+.nav li {
+    margin: 0;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on items */
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.nav a:hover {
+    background-color: #2e7d32; /* Darker green hover */
+    color: #e8f5e9; /* Softer white text */
+    transform: scale(1.1); /* Larger zoom effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav a.active {
+    background: linear-gradient(90deg, #43a047, #81c784); /* Active gradient */
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #66bb6a; /* Border for active link */
+    box-shadow: 0 6px 15px rgba(102, 187, 106, 0.5);
+}
+
+.nav::-webkit-scrollbar {
+    width: 8px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background-color: #4caf50; /* Scrollbar thumb */
+    border-radius: 4px;
+}
+
+.nav::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1); /* Scrollbar track */
+}
+
+
+/* Main Content Styles (Section) */
+.section {
+    width: 50%; /* Adjusted to 50% for symmetry */
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    flex: 1;
+    max-width: 800px; /* Ensure content doesn't overflow */
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 1rem;
+}
+
+.btnTambah {
+    color: #f9f9f9;
+    background-color: #43a047;
+}
+
+.btnTambah:hover {
+    background-color: #6b37ab;
+}
+
+button.bg-teal-500 {
+    background-color: #26a69a;
+    color: white;
+}
+
+button.bg-blue-500 {
+    background-color: #1e88e5;
+    color: white;
+}
+
+button.bg-red-500 {
+    background-color: #e53935;
+    color: white;
+}
+
+button.bg-green-500 {
+    background-color: #43a047;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+.btnSamping a:disabled {
+    background-color: #cccccc; /* Warna abu-abu */
+    color: #666666; /* Warna teks lebih terang */
+
+}
+
+.btnSamping a:hover {
+    color: #e53935;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    font-weight: bold;
+    background-color: #f1f1f1;
+}
+
+input, select {
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* Right Sidebar (Aside) Styles */
+.aside {
+    width: 25%; /* Adjusted to 25% for symmetry */
+    background: linear-gradient(145deg, #f9f9f9, #e6e6e6); /* Subtle gradient */
+    padding: 1.5rem;
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 350px; /* Ensure it doesn’t overflow */
+    flex-shrink: 0; /* Prevent the aside from shrinking */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aside:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.status-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Even spacing */
+}
+
+.status-item {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.status-item:hover {
+    background-color: #e8f5e9; /* Light green hover effect */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+.status-text {
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #212121;
+    color: white;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center footer content horizontally */
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Space between follow us and copyright */
+    width: 100%; /* Make sure the content takes full width */
+    max-width: 1200px; /* Optional: limit the maximum width for a neat layout */
+}
+
+.follow-us {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+    color: #e53935;
+}
+
+.copyright {
+    text-align: center; /* Center text for copyright */
+    margin-top: 1rem;
+    flex-grow: 1; /* Allow copyright section to take available space */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Tablet View */
+    .nav, .section, .aside {
+        width: 100%; /* Full width */
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        flex-direction: column; /* Stack elements in column */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile View */
+    header {
+        padding: 1rem;
+    }
+
+    .nav {
+        padding: 1rem;
+    }
+}

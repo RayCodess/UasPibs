@@ -10,7 +10,7 @@ $header = getHeader();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Tugas Ekternal/Internal</title>
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -63,7 +63,7 @@ $header = getHeader();
         </table>
     `;
 
-    loadSurat(); // buat data surat tugas
+    loadSurat();
 }
 
        
@@ -73,7 +73,7 @@ function tampilAbout() {
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; justify-content: center; align-items: center; max-width: 800px; margin: 0 auto;">
             <!-- Profil Anggota 1 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="fajar.png" alt="Foto Muhammad Fajar Rizkyulloh" 
+                <img src="image/fajar.png" alt="Foto Muhammad Fajar Rizkyulloh" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Fajar Rizkyulloh</strong>
@@ -83,7 +83,7 @@ function tampilAbout() {
             
             <!-- Profil Anggota 2 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="satrio.jpg" alt="Foto Satrio Hutama MW" 
+                <img src="image/satrio.jpg" alt="Foto Satrio Hutama MW" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Satrio Hutama MW</strong>
@@ -93,7 +93,7 @@ function tampilAbout() {
 
             <!-- Profil Anggota 3 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="verro.png" alt="Foto Muhammad Averroes" 
+                <img src="image/verro.png" alt="Foto Muhammad Averroes" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Averroes</strong>
@@ -103,7 +103,7 @@ function tampilAbout() {
 
             <!-- Profil Anggota 4 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="rehan.jpg" alt="Foto Muhammad Rayhan" 
+                <img src="image/rehan.jpg" alt="Foto Muhammad Rayhan" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Rayhan</strong>
@@ -114,7 +114,7 @@ function tampilAbout() {
     `;
 }
 
-        // ini CRUD nya
+        
         function createSurat(event) {
     event.preventDefault();
 
@@ -216,7 +216,7 @@ function deleteSurat(idSurat) {
         .catch(error => console.error('Error:', error));
 }
 
-// Fungsi untuk memuat status surat
+
 function loadStatus() {
             fetch('koneksi.php', {
                 method: 'POST',
@@ -224,7 +224,7 @@ function loadStatus() {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: new URLSearchParams({
-                    action: 'status', // Panggil aksi status
+                    action: 'status', 
                 }),
             })
             .then(response => response.json())
@@ -235,7 +235,7 @@ function loadStatus() {
                 }
 
                 const statusList = document.getElementById('status-list');
-                statusList.innerHTML = ''; // Kosongkan daftar status
+                statusList.innerHTML = ''; 
 
                 data.forEach(item => {
                     const statusItem = `
@@ -252,13 +252,14 @@ function loadStatus() {
             });
         }
 
-        // Memuat data surat dan status saat halaman dimuat
+        
         window.onload = function() {
             loadStatus();
         }
     </script>
 
 </head>
+
 <body class="bg-gray-100">
     <header>
         <div class="flex items-center justify-between">
@@ -275,7 +276,6 @@ function loadStatus() {
                 <?php endif; ?>
             </div>
 
-            <!-- Tombol Logout-->
             <div class="ml-auto">
                 <a href="login.php">
                     <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
@@ -284,10 +284,8 @@ function loadStatus() {
         </div>
     </header>
 
-    <!-- Main Layout -->
     <div class="container flex">
-        <!-- Nav (Sidebar) -->
-        <nav class="nav w-1/4 p-4 ">
+        <nav class="nav w-1/4 p-4">
             <div class="mb-6">
                 <h1 class="text-xl font-bold">Dashboard</h1>
             </div>
@@ -297,7 +295,6 @@ function loadStatus() {
             </ul>
         </nav>
 
-        <!-- Main Section -->
         <section class="section w-3/4 p-4">
             <div id="content">
                 <h3>Selamat Datang</h3>
@@ -305,13 +302,11 @@ function loadStatus() {
             </div>
         </section>
 
-        <!-- Aside (Sidebar kanan) -->
         <aside class="aside w-1/4 p-4 bg-gray-200">
-        <h2 class="text-xl font-bold mb-4">Status Surat Tugas</h2>
-        <ul id="status-list" class="status-list">
-            <!-- Status akan dimasukkan di sini -->
-        </ul>
-    </aside>
+            <h2 class="text-xl font-bold mb-4">Status Surat Tugas</h2>
+            <ul id="status-list" class="status-list">
+            </ul>
+        </aside>
     </div>
 
     <footer>
@@ -342,3 +337,4 @@ function loadStatus() {
             <?php endif; ?>
         </div>
     </footer>
+</body>

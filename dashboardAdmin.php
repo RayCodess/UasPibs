@@ -1,5 +1,6 @@
 <?php
 include('koneksi.php');
+include('koneksiHeater.php');
 
 $footer = getFooter();
 $header = getHeader();
@@ -10,7 +11,7 @@ $header = getHeader();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Tugas Ekternal/Internal</title>
-    <link href="styless.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -206,58 +207,107 @@ function tolakSurat(idSurat) {
 <body class="bg-gray-100" onload="tampilHome()">
     
 <header>
-        <div class="flex items-center justify-between">
-            <div class="flex items-center">
-                <?php if ($header): ?>
-                    <img src="<?php echo $header['logo_url']; ?>" alt="Logo" class="w-10 h-10 mr-3 rounded">
-                    <div class="header-container">
-                        <h1 class="site-name"><?php echo $header['site_name']; ?></h1>
-                        <p class="slogan"><?php echo $header['slogan']; ?></p>
-                        <p class="address"><?php echo $header['address']; ?></p>
-                    </div>
-                <?php else: ?>
-                    <p>Header tidak tersedia</p>
-                <?php endif; ?>
-            </div>
-
-            
-            <div class="ml-auto">
-                <a href="login.php">
-                    <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
-                </a>
-            </div>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center">
+            <?php if ($header): ?>
+                <img src="<?php echo $header['logo_url']; ?>" alt="Logo" class="w-10 h-10 mr-3 rounded">
+                <div class="header-container">
+                    <h1 class="site-name"><?php echo $header['site_name']; ?></h1>
+                    <p class="slogan"><?php echo $header['slogan']; ?></p>
+                    <p class="address"><?php echo $header['address']; ?></p>
+                </div>
+            <?php else: ?>
+                <p>Header tidak tersedia</p>
+            <?php endif; ?>
         </div>
-    </header>
+        
+        <div class="ml-auto">
+    <form method="POST" action="" class="no-bg-form">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none" name="edit_footer">Edit Footer</button>
+    </form>
+
+    <form method="POST" action="" class="no-bg-form">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none" name="edit_header">Edit Header</button>
+    </form>
+</div>
+    </div>
+</header>
+<?php if (isset($_POST['edit_header'])): ?>
+    <div class="modal">
+        <form method="POST" action="">
+            <h2>Edit Header</h2>
+            <label for="site_name">Site Name:</label>
+            <input type="text" name="site_name" id="site_name" value="<?php echo $header['site_name']; ?>" required><br>
+
+            <label for="slogan">Slogan:</label>
+            <input type="text" name="slogan" id="slogan" value="<?php echo $header['slogan']; ?>" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" value="<?php echo $header['address']; ?>" required><br>
+
+            <button type="submit" name="update_header" class="btn-save">Simpan</button>
+            <button type="submit" class="cancel-btn" name="cancel_edit">Batal</button>
+        </form>
+    </div>
+<?php endif; ?>
 
     <main class="container p-6" id="content"></main>
 
     <footer>
-        <div class="footer-content">
-            <?php if ($footer): ?>
-                <div class="follow-us">
-                    <p><?php echo $footer['follow_us_title']; ?></p>
-                    <div class="social-links">
-                        <a href="<?php echo $footer['facebook_url']; ?>" target="_blank" class="text-blue-500">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="<?php echo $footer['twitter_url']; ?>" target="_blank" class="text-blue-400">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="<?php echo $footer['instagram_url']; ?>" target="_blank" class="text-pink-600">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="<?php echo $footer['tiktok_url']; ?>" target="_blank" class="text-black">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
+    <div class="footer-content">
+        <?php if ($footer): ?>
+            <div class="follow-us">
+                <p><?php echo $footer['follow_us_title']; ?></p>
+                <div class="social-links">
+                    <a href="<?php echo $footer['facebook_url']; ?>" target="_blank" class="text-blue-500">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="<?php echo $footer['twitter_url']; ?>" target="_blank" class="text-blue-400">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="<?php echo $footer['instagram_url']; ?>" target="_blank" class="text-pink-600">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="<?php echo $footer['tiktok_url']; ?>" target="_blank" class="text-black">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
-                <div class="copyright">
-                    <p><?php echo $footer['copyright_text']; ?></p>
-                </div>
-            <?php else: ?>
-                <p>Footer tidak tersedia</p>
-            <?php endif; ?>
-        </div>
-    </footer>
+            </div>
+            <div class="copyright">
+                <p><?php echo $footer['copyright_text']; ?></p>
+            </div>
+        <?php else: ?>
+            <p>Footer tidak tersedia</p>
+        <?php endif; ?>
+    </div>
+</footer>
+
+<?php if (isset($_POST['edit_footer'])): ?>
+    <div class="modal">
+        <form method="POST" action="">
+            <h2>Edit Footer</h2>
+            <label for="follow_us_title">Follow Us Title:</label>
+            <input type="text" name="follow_us_title" id="follow_us_title" value="<?php echo $footer['follow_us_title']; ?>" required><br>
+
+            <label for="facebook_url">Facebook URL:</label>
+            <input type="url" name="facebook_url" id="facebook_url" value="<?php echo $footer['facebook_url']; ?>"><br>
+
+            <label for="twitter_url">Twitter URL:</label>
+            <input type="url" name="twitter_url" id="twitter_url" value="<?php echo $footer['twitter_url']; ?>"><br>
+
+            <label for="instagram_url">Instagram URL:</label>
+            <input type="url" name="instagram_url" id="instagram_url" value="<?php echo $footer['instagram_url']; ?>"><br>
+
+            <label for="tiktok_url">TikTok URL:</label>
+            <input type="url" name="tiktok_url" id="tiktok_url" value="<?php echo $footer['tiktok_url']; ?>"><br>
+
+            <label for="copyright_text">Copyright Text:</label>
+            <textarea name="copyright_text" id="copyright_text" rows="4" required><?php echo $footer['copyright_text']; ?></textarea><br>
+
+            <button type="submit" name="update_footer" class="btn-save">Simpan</button>
+            <button type="submit" class="cancel-btn" name="cancel_edit">Batal</button>
+        </form>
+    </div>
+<?php endif; ?>
 </body>
 </html>

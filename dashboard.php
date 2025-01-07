@@ -10,7 +10,7 @@ $header = getHeader();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Tugas Ekternal/Internal</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 

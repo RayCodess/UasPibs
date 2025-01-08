@@ -10,7 +10,7 @@ $header = getHeader();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Tugas Ekternal/Internal</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -47,20 +47,20 @@ $header = getHeader();
 
         
         <h3>Daftar Surat Tugas</h3>
-        <table id="suratTable" style="width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-            <thead style="background-color: #f1f1f1;">
-                <tr>
-                    <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ccc;">Judul Surat</th>
-                    <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ccc;">Keterangan</th>
-                    <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ccc;">Tanggal</th>
-                    <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ccc;">Jenis Surat</th>
-                    <th style="padding: 10px; text-align: left; border-bottom: 1px solid #ccc;">Aksi</th>
-                </tr>
-            </thead>
-            <tbody id="suratTugasList">
-                <!-- Data Surat Tugas akan dimuat di sini -->
-            </tbody>
-        </table>
+<table id="suratTable" class="surat-table">
+    <thead>
+        <tr>
+            <th class="table-header">Judul Surat</th>
+            <th class="table-header">Keterangan</th>
+            <th class="table-header">Tanggal</th>
+            <th class="table-header">Jenis Surat</th>
+            <th class="table-header">Aksi</th>
+        </tr>
+    </thead>
+    <tbody id="suratTugasList">
+        <!-- Data Surat Tugas akan dimuat di sini -->
+    </tbody>
+</table>
     `;
 
     loadSurat();
@@ -259,7 +259,6 @@ function loadStatus() {
     </script>
 
 </head>
-
 <body class="bg-gray-100">
     <header>
         <div class="flex items-center justify-between">
@@ -276,6 +275,7 @@ function loadStatus() {
                 <?php endif; ?>
             </div>
 
+            
             <div class="ml-auto">
                 <a href="login.php">
                     <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
@@ -284,30 +284,34 @@ function loadStatus() {
         </div>
     </header>
 
-    <div class="container flex">
-        <nav class="nav w-1/4 p-4">
-            <div class="mb-6">
-                <h1 class="text-xl font-bold">Dashboard</h1>
-            </div>
-            <ul class="btnSamping">
-                <li><a href="#" onclick="tampilHome()">Home</a></li>
-                <li><a href="#" onclick="tampilAbout()">About</a></li>
-            </ul>
-        </nav>
+    
+    <div class="container flex flex-wrap">
 
-        <section class="section w-3/4 p-4">
-            <div id="content">
-                <h3>Selamat Datang</h3>
-                <p>Klik menu di sebelah kiri untuk melihat informasi yang lainnya.</p>
-            </div>
-        </section>
+    <nav class="nav w-full lg:w-1/4 p-4 bg-gray-100 border-b lg:border-b-0 lg:border-r border-gray-300">
+        <div class="mb-6">
+            <h1 class="text-xl font-bold">Dashboard</h1>
+        </div>
+        <ul class="btnSamping space-y-2">
+            <li><a href="#" onclick="tampilHome()" class="block p-2 bg-blue-500 text-white rounded">Home</a></li>
+            <li><a href="#" onclick="tampilAbout()" class="block p-2 bg-blue-500 text-white rounded">About</a></li>
+        </ul>
+    </nav>
 
-        <aside class="aside w-1/4 p-4 bg-gray-200">
-            <h2 class="text-xl font-bold mb-4">Status Surat Tugas</h2>
-            <ul id="status-list" class="status-list">
-            </ul>
-        </aside>
-    </div>
+    <section class="section w-full lg:w-1/2 p-4 bg-white">
+        <div id="content">
+            <h3 class="text-xl font-semibold">Selamat Datang</h3>
+            <p class="text-gray-600">Klik menu di sebelah kiri untuk melihat informasi yang lainnya.</p>
+        </div>
+    </section>
+
+    <aside class="aside w-full lg:w-1/4 p-4 bg-gray-200 mt-4 lg:mt-0">
+        <h2 class="text-xl font-bold mb-4">Status Surat Tugas</h2>
+        <ul id="status-list" class="status-list space-y-2">
+
+        </ul>
+    </aside>
+
+</div>
 
     <footer>
         <div class="footer-content">
@@ -337,4 +341,3 @@ function loadStatus() {
             <?php endif; ?>
         </div>
     </footer>
-</body>

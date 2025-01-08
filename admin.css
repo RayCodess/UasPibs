@@ -45,18 +45,22 @@ header .address {
 }
 
 header form button {
-    margin: 0 10px;
-    background-color: #3182ce;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+    background-color: #f0e6e6 !important;
+    color: #2d3748 !important;
+    padding: 10px 20px;
+    border-radius: 12px;
     font-size: 1rem;
+    border: 2px solid #000000;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 8px 10px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 header form button:hover {
-    background-color: #2b6cb0;
+    background-color: #0dc21c !important;
+    color: #fff !important;
+    transform: scale(1.05);
 }
 
 main.container {

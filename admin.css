@@ -15,9 +15,8 @@ body {
     overflow: hidden; 
 }
 
-/* Styles buat Header */
 header {
-    background: linear-gradient(90deg, #1b5e20, #4caf50); /* buat Gradient background */
+    background: linear-gradient(90deg, #1b5e20, #4caf50); 
     color: white;
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -69,8 +68,6 @@ header nav a:hover {
     z-index: 1000; 
 }
 
-
-/* Form */
 form {
     background-color: white;
     padding: 2rem;
@@ -121,7 +118,6 @@ table td {
     text-align: center;
 }
 
-/* Footer */
 footer {
     background-color: #212121;
     color: white;

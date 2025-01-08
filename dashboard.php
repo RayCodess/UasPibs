@@ -73,7 +73,7 @@ function tampilAbout() {
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; justify-content: center; align-items: center; max-width: 800px; margin: 0 auto;">
             <!-- Profil Anggota 1 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="image/fajar.png" alt="Foto Muhammad Fajar Rizkyulloh" 
+                <img src="fajar.png" alt="Foto Muhammad Fajar Rizkyulloh" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Fajar Rizkyulloh</strong>
@@ -83,7 +83,7 @@ function tampilAbout() {
             
             <!-- Profil Anggota 2 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="image/satrio.jpg" alt="Foto Satrio Hutama MW" 
+                <img src="satrio.jpg" alt="Foto Satrio Hutama MW" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Satrio Hutama MW</strong>
@@ -93,7 +93,7 @@ function tampilAbout() {
 
             <!-- Profil Anggota 3 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="image/verro.png" alt="Foto Muhammad Averroes" 
+                <img src="verro.png" alt="Foto Muhammad Averroes" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Averroes</strong>
@@ -103,7 +103,7 @@ function tampilAbout() {
 
             <!-- Profil Anggota 4 -->
             <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img src="image/rehan.jpg" alt="Foto Muhammad Rayhan" 
+                <img src="rehan.jpg" alt="Foto Muhammad Rayhan" 
                      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
                 <div style="margin-top: 15px; font-family: Arial, sans-serif; color: #555;">
                     <strong style="display: block; font-size: 18px; color: #222;">Muhammad Rayhan</strong>

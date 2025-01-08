@@ -13,7 +13,6 @@ $query_header = "SELECT * FROM tbl_header WHERE id = 1";
 $result_header = mysqli_query($conn, $query_header);
 $header = mysqli_fetch_assoc($result_header);
 
-// Proses untuk menyimpan perubahan header
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_header'])) {
     $site_name = $_POST['site_name'];
     $slogan = $_POST['slogan'];
@@ -30,7 +29,6 @@ $query_footer = "SELECT * FROM tbl_footer WHERE id = 1";
 $result_footer = mysqli_query($conn, $query_footer);
 $footer = mysqli_fetch_assoc($result_footer);
 
-// Proses untuk menyimpan perubahan footer
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_footer'])) {
     $follow_us_title = $_POST['follow_us_title'];
     $facebook_url = $_POST['facebook_url'];
@@ -42,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_footer'])) {
     $update_query = "UPDATE tbl_footer SET follow_us_title = '$follow_us_title', facebook_url = '$facebook_url', twitter_url = '$twitter_url', instagram_url = '$instagram_url', tiktok_url = '$tiktok_url', copyright_text = '$copyright_text' WHERE id = 1";
     if (mysqli_query($conn, $update_query)) {
         echo "Footer updated successfully";
-        header("Location: " . $_SERVER['PHP_SELF']); // Refresh halaman setelah update
+        header("Location: " . $_SERVER['PHP_SELF']); 
         exit();
     } else {
         echo "Error updating footer: " . mysqli_error($conn);

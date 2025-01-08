@@ -1,10 +1,13 @@
+<?php
+include('koneksiLogin.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -20,41 +23,21 @@
         </div>
         <div class="form-section">
             <h2>Login</h2>
-            <form id="loginForm">
+            <form method="POST" action="">
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" placeholder="Enter Username...">
+                    <input type="text" name="username" placeholder="Enter Username..." required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="input-group">
-                    <button type="button" onclick="handleLogin()">Login</button>
+                    <button type="submit">Login</button>
                 </div>
-                <p id="errorMessage" class="error-message"></p>
             </form>
         </div>
     </div>
 
-    <script>
-        function handleLogin() {
-            var username = document.getElementById('username').value.trim();
-            var password = document.getElementById('password').value.trim();
-            var errorMessage = document.getElementById('errorMessage');
-            
-            // Reset error message
-            errorMessage.textContent = "";
-
-            // Simulate login
-            if (username === 'admin' && password === 'password123') {
-                window.location.href = "dashboardAdmin.php";
-            } else if (username === 'user' && password === 'user123') {
-                window.location.href = "dashboard.php";
-            } else {
-                errorMessage.textContent = "Invalid credentials, please try again.";
-            }
-        }
-    </script>
 </body>
 </html>
